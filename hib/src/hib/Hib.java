@@ -36,7 +36,7 @@ public class Hib {
         User userd = new User("d", "d");
         User usere = new User("e", "e");
         
-        //commit
+        //User feltöltése
         session.save(usera);
         session.save(userb);
         session.save(userc);
@@ -44,11 +44,13 @@ public class Hib {
         session.save(usere);
         session.getTransaction().commit();
         
+        //User letöltése
         session.beginTransaction();
         User user = (User) session.get(User.class, "b");
         System.out.println(user);
         session.getTransaction().commit();
         
+        //Tábla letöltése listába
         session.beginTransaction();
         List<User> list = session.createQuery("from User").list();
         session.getTransaction().commit();
@@ -58,6 +60,10 @@ public class Hib {
             System.out.println(user1);
         }
         session.close();
+        
+        //User frissítése
+        
+        
         NewHibernateUtil.closeSessionFactory();
     }
     
