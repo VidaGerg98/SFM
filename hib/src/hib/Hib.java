@@ -30,11 +30,11 @@ public class Hib {
         al.add(10);
         hm.put("Prob", al);
         
-        User usera = new User("a", "a", hm);
-        User userb = new User("b", "b", hm);
-        User userc = new User("c", "c", hm);
-        User userd = new User("d", "d", hm);
-        User usere = new User("e", "e", hm);
+        User usera = new User("a", "a");
+        User userb = new User("b", "b");
+        User userc = new User("c", "c");
+        User userd = new User("d", "d");
+        User usere = new User("e", "e");
         
         //commit
         session.save(usera);
