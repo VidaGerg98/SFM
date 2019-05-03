@@ -36,6 +36,7 @@ public class Hib {
         User userd = new User("d", "d", hm);
         User usere = new User("e", "e", hm);
         
+        //commit
         session.save(usera);
         session.save(userb);
         session.save(userc);
