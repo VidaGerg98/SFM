@@ -35,6 +35,7 @@ public class Hib {
         User userc = new User("c", "c", hm);
         User userd = new User("d", "d", hm);
         User usere = new User("e", "e", hm);
+        
         session.save(usera);
         session.save(userb);
         session.save(userc);
