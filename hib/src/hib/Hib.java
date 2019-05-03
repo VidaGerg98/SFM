@@ -23,12 +23,18 @@ public class Hib {
     public static void main(String[] args) {
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
+        HashMap<String, ArrayList<Integer>> hm;
+        hm = new HashMap<>();
+        ArrayList<Integer> al = new ArrayList<>();
+
+        al.add(10);
+        hm.put("Prob", al);
         
-        User usera = new User("a", "a", null);
-        User userb = new User("b", "b", null);
-        User userc = new User("c", "c", null);
-        User userd = new User("d", "d", null);
-        User usere = new User("e", "e", null);
+        User usera = new User("a", "a", hm);
+        User userb = new User("b", "b", hm);
+        User userc = new User("c", "c", hm);
+        User userd = new User("d", "d", hm);
+        User usere = new User("e", "e", hm);
         session.save(usera);
         session.save(userb);
         session.save(userc);
